@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @font-face {
+            font-family: 'kraash';
+            src: url('kraash.TTF')
+        }
+
+        body {
+            background-color: #757362;
+        }
+
+        .container {
+            height: 400px;
+            width: 590px;
+
+            margin: auto;
+            margin-top: 90px;
+            border-top-right-radius: 20px;
+            border-top-left-radius: 20px;
+            box-shadow: 1px 1px 9px 7px #470ddb;
+        }
+
+        .heading {
+            height: 150px;
+            width: auto;
+            border-top-right-radius: 20px;
+            border-top-left-radius: 20px;
+            background-color: #587dc6;
+            padding-top: 5px;
+
+        }
+
+        #text {
+            text-align: center;
+            font-size: 30px;
+            font-family: 'kraash';
+            margin-top: 45px;
+
+        }
+
+        .keys {
+            height: 250px;
+            width: 590px;
+            padding: 0;
+
+        }
+
+        .key {
+            height: 250px;
+            width: 49px;
+            display: inline-block;
+            border-bottom-right-radius: 2px;
+            border-bottom-left-radius: 2px;
+            margin: 0;
+        }
+
+        .keyBlack {
+            background-color: black;
+        }
+
+        .keyWhite {
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='container'>
+
+        <div class='heading'>
+            <p id='text'>Classic Piano</p>
+        </div>
+
+        <div class='keys'>
+            <div class="key keyWhite" id="k1"></div>
+            <div class="key keyBlack" id="k2"></div>
+            <div class="key keyWhite" id="k3"></div>
+            <div class="key keyBlack" id="k4"></div>
+            <div class="key keyWhite" id="k5"></div>
+            <div class="key keyBlack" id="k6"></div>
+            <div class="key keyWhite" id="k7"></div>
+            <div class="key keyBlack" id="k8"></div>
+            <div class="key keyWhite" id="k9"></div>
+            <div class="key keyBlack" id="k10"></div>
+            <div class="key keyWhite" id="k11"></div>
+        </div>
+
+        <script>
+            window.addEventListener('DOMContentLoaded', () => {
+                let k1 = document.querySelector('#k1'),
+                    k2 = document.querySelector('#k2'),
+                    k3 = document.querySelector('#k3'),
+                    k4 = document.querySelector('#k4'),
+                    k5 = document.querySelector('#k5'),
+                    k6 = document.querySelector('#k6'),
+                    k7 = document.querySelector('#k7'),
+                    k8 = document.querySelector('#k8'),
+                    k9 = document.querySelector('#k9'),
+                    k10 = document.querySelector('#k10'),
+                    k11 = document.querySelector('#k11');
+
+
+                let s1 = new Audio('sounds/key1.mp3');
+                let s2 = new Audio('sounds/key2.mp3');
+                let s3 = new Audio('sounds/key3.mp3');
+                let s4 = new Audio('sounds/key4.mp3');
+                let s5 = new Audio('sounds/key5.mp3');
+                let s6 = new Audio('sounds/key6.mp3');
+                let s7 = new Audio('sounds/key7.mp3');
+                let s8 = new Audio('sounds/key8.mp3');
+                let s9 = new Audio('sounds/key9.mp3');
+                let s10 = new Audio('sounds/key10.mp3');
+                let s11 = new Audio('sounds/key11.mp3');
+
+                //White keys
+                k1.addEventListener('mousedown', e => {
+                    s1.play();
+                    k1.style.backgroundColor = 'lightgray';
+                    k1.addEventListener('mousup', e => {
+                        k1.style.backgroundColor = 'white';
+                    })
+                })
+
+                k3.addEventListener('mousedown', e => {
+                    s3.play();
+                    k3.style.backgroundColor = 'lightgray'
+                    k3.addEventListener('mouseup', (e) => {
+                        k3.style.backgroundColor = 'white'
+                    })
+                })
+
+                k5.addEventListener('mousedown', (e) => {
+                    s5.play();
+                    k5.style.backgroundColor = 'lightgray'
+                    k5.addEventListener('mouseup', (e) => {
+                        k5.style.backgroundColor = 'white'
+                    })
+                })
+
+                k7.addEventListener('mousedown', (e) => {
+                    s7.play();
+                    k7.style.backgroundColor = 'lightgray'
+                    k7.addEventListener('mouseup', (e) => {
+                        k7.style.backgroundColor = 'white'
+                    })
+                })
+
+                k9.addEventListener('mousedown', (e) => {
+                    s9.play();
+                    k9.style.backgroundColor = 'lightgray'
+                    k9.addEventListener('mouseup', (e) => {
+                        k9.style.backgroundColor = 'white'
+                    })
+                })
+
+                k11.addEventListener('mousedown', (e) => {
+                    s11.play();
+                    k11.style.backgroundColor = 'lightgray'
+                    k11.addEventListener('mouseup', (e) => {
+                        k11.style.backgroundColor = 'white'
+                    })
+                })
+
+                //black keys
+
+                k2.addEventListener('mousedown', (e) => {
+                    s2.play();
+                    k2.style.backgroundColor = 'grey'
+                    k2.addEventListener('mouseup', (e) => {
+                        k2.style.backgroundColor = 'black'
+                    })
+                })
+
+                k4.addEventListener('mousedown', (e) => {
+                    s4.play();
+                    k4.style.backgroundColor = 'grey'
+                    k4.addEventListener('mouseup', (e) => {
+                        k4.style.backgroundColor = 'black'
+                    })
+                })
+
+                k6.addEventListener('mousedown', (e) => {
+                    s6.play();
+                    k6.style.backgroundColor = 'grey'
+                    k6.addEventListener('mouseup', (e) => {
+                        k6.style.backgroundColor = 'black'
+                    })
+                })
+
+                k8.addEventListener('mousedown', (e) => {
+                    s8.play();
+                    k8.style.backgroundColor = 'grey'
+                    k8.addEventListener('mouseup', (e) => {
+                        k8.style.backgroundColor = 'black'
+                    })
+                })
+
+                k10.addEventListener('mousedown', (e) => {
+                    s10.play();
+                    k10.style.backgroundColor = 'grey'
+                    k10.addEventListener('mouseup', (e) => {
+                        k10.style.backgroundColor = 'black'
+                    })
+                })
+            })
+        </script>
+
+    </div>
+</body>
+
+</html>

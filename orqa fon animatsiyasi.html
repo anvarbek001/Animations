@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/fontawesome-free-6.4.2-web/fontawesome-free-6.4.2-web/css/all.css">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            height: 100vh;
+            display: flex;
+            align-items:center;
+            justify-content: center;
+            background:#fff;
+        }
+
+        .toggle{
+            position: relative;
+            height: 150px;
+            width: 300px;
+            background:#ddd;
+            border-radius:100px;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .toggle .icon{
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+            height: 120px;
+            width: 120px;
+            font-size: 50px;
+            color:#999;
+            background:#fff;
+            display: flex;
+            align-items:center;
+            justify-content: center;
+            border-radius: 50%;
+            box-shadow: 0 0 6px , rgba(0, 0, 0, 0.1);
+            transition: all 0.5s ease-in-out;
+        }
+
+        .toggle.active{
+            background:gold;
+        }
+
+        .toggle.active .icon{
+            left: calc(100% - 120px - 20px);
+            color:gold;
+            transition: all 0.5s ease-in-out;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="toggle">
+        <div class="icon">
+            <i class="fas fa-lock-open"></i>
+        </div>
+    </div>
+
+    <script>
+        const toggle = document.querySelector(".toggle"),
+                icon = document.querySelector(".icon i");
+
+        
+        toggle.addEventListener("click",() => {
+            toggle.classList.toggle("active")
+
+
+        if(toggle.classList.contains("active")){
+           return icon.classList.replace("fa-lock-open", "fa-lock")
+        }
+
+        icon.classList.replace("fa-lock" , "fa-lock-open")
+        })
+    </script>
+</body>
+</html>

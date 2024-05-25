@@ -1,0 +1,229 @@
+<!-- Developed By Engineer Elhamuddin Taheri -->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel='stylesheet' type="text/css" href='../bootstrap-5.2.2-dist/css/bootstrap.min.css'>
+    <!-- <link rel='stylesheet' type="text/css" href='alarm_clock.css'> -->
+    <style>
+        /* Developed By Engineer Elhamuddin Taheri */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: lightgray;
+        }
+
+        .header {
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+
+        #box {
+            border: 1px solid rgba(0, 0, 0, 0);
+            border-radius: 40px;
+            height: auto;
+            background-color: rgba(255, 0, 0, 0.50);
+        }
+
+        #clock {
+            border: 1px solid rgba(0, 0, 0, 0.663);
+            border-top-left-radius: 40px;
+            border-top-right-radius: 40px;
+            background-color: rgba(0, 0, 0, 0.663);
+            color: white;
+            height: 120px;
+        }
+
+        #clock_parts {
+            font-size: 80px;
+        }
+
+        #select {
+            margin-top: 35px;
+        }
+
+        select {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 5px;
+        }
+
+        #button {
+            margin-top: 35px;
+            margin-bottom: 45px;
+        }
+
+        #button2 {
+            margin-top: 5px;
+            display: none;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container text-center w-50">
+        <h1 class="header text-center">Alarm Clock</h1>
+        <div id="box" class="text-center">
+
+            <div id="clock">
+                <h1 id="clock_parts"><span id="cHour">00</span> : <span id="cMin">00</span> : <span id="cSec">00</span>
+                </h1>
+            </div>
+
+            <div id="select" class="text-center">
+                <select class="form-control w-50" id="tHour">
+                    <option value="Hour" selected="" disabled="" hidden="">Hour</option>
+                    <option value="00">00</option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="13">12</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                </select>
+
+                <select class="form-control w-50" id="tMin">
+                    <option value="Minute" selected="" disabled="" hidden="">Minute</option>
+                    <option value="00">00</option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="13">12</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                    <option value="32">32</option>
+                    <option value="33">33</option>
+                    <option value="34">34</option>
+                    <option value="35">35</option>
+                    <option value="36">36</option>
+                    <option value="37">37</option>
+                    <option value="38">38</option>
+                    <option value="39">39</option>
+                    <option value="40">40</option>
+                    <option value="41">41</option>
+                    <option value="42">42</option>
+                    <option value="43">43</option>
+                    <option value="44">44</option>
+                    <option value="45">45</option>
+                    <option value="46">46</option>
+                    <option value="47">47</option>
+                    <option value="48">48</option>
+                    <option value="49">49</option>
+                    <option value="50">50</option>
+                    <option value="51">51</option>
+                    <option value="52">52</option>
+                    <option value="53">53</option>
+                    <option value="54">54</option>
+                    <option value="55">55</option>
+                    <option value="56">56</option>
+                    <option value="57">57</option>
+                    <option value="58">58</option>
+                    <option value="59">59</option>
+                </select>
+            </div>
+            <button class="btn btn-danger w-50" id="button2">Stop Alarm</button>
+            <button class="btn btn-danger w-50" id="button">Set Alarm</button>
+
+        </div>
+    </div>
+
+
+
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const cHour = document.querySelector('#cHour'),
+                cMin = document.querySelector('#cMin'),
+                cSec = document.querySelector('#cSec'),
+                tHour = document.querySelector('#tHour'),
+                tMin = document.querySelector('#tMin'),
+                button = document.querySelector('#button'),
+                button2 = document.querySelector('#button2')
+
+            let clk = new Date();
+
+            function clock() {
+                clk = new Date();
+                cHour.textContent = Number(clk.getHours());
+                cMin.textContent = Number(clk.getMinutes());
+                cSec.textContent = Number(clk.getSeconds());
+            }
+
+            setInterval(clock, 500);
+
+            button.addEventListener("click", (e) => {
+                let clock_seconds = Number(cHour.textContent) * 3600 + Number(cMin.textContent) * 60 + Number(cSec.textContent);
+                let time_seconds = Number(tHour.value) * 3600 + Number(tMin.value) * 60;
+                console.log(time_seconds - clock_seconds);
+                let _time = time_seconds - clock_seconds;
+
+                function sound() {
+                    let _sound = new Audio("ringtone.mp3")
+                    _sound.play()
+                    button2.setAttribute("style", "display:block");
+                    button2.addEventListener("click", (e) => {
+                        _sound.pause();
+                        button.setAttribute("style", "display:none")
+                    })
+
+                    function hide_btn() {
+                        button2.setAttribute("style", "display:none");
+                    }
+
+                    setTimeout(hide_btn, 16800);
+                }
+
+                setTimeout(sound, _time * 1000);
+            })
+        })
+    </script>
+</body>
+
+</html>

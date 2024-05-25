@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background: black;
+        }
+
+        .container{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: rotateX(65deg);
+            perspective: 1000px;
+            transform-style:preserve-3d ;
+        }
+
+        .circle{
+            border-radius: 200px;
+            position: absolute;
+            animation: circle 5s infinite;
+        }
+
+        @keyframes circle{
+            50%{
+                transform: translateZ(180px);
+            }
+        }
+
+        #circle1{
+            height: 400px;
+            width: 400px;
+            border: 5px solid blue;
+            animation-delay: .9s;
+        }
+
+        #circle2{
+            height: 360px;
+            width: 360px;
+            border: 5px solid rgb(255, 0, 255);
+            animation-delay: .8s;
+        }
+
+        #circle3{
+            height: 320px;
+            width: 320px;
+            border: 5px solid rgb(0, 204, 255);
+            animation-delay: .7s;
+        }
+
+        #circle4{
+            height: 280px;
+            width: 280px;
+            border: 5px solid rgb(247, 0, 255);
+            animation-delay: .6s;
+        }
+
+        #circle5{
+            height: 240px;
+            width: 240px;
+            border: 5px solid rgb(180, 80, 50);
+            animation-delay: .5s;
+        }
+
+        #circle6{
+            height: 200px;
+            width: 200px;
+            border: 5px solid rgb(0, 255, 213);
+            animation-delay: .4s;
+        }
+
+        #circle7{
+            height: 160px;
+            width: 160px;
+            border: 5px solid rgb(182, 212, 47);
+            animation-delay: .3s;
+        }
+
+        #circle8{
+            height: 120px;
+            width: 120px;
+            border: 5px solid rgb(48, 209, 15);
+            animation-delay: .2s;
+        }
+
+        #circle9{
+            height: 80px;
+            width: 80px;
+            border: 5px solid rgb(169, 128, 226);
+            animation-delay: .1s;
+        }
+
+        #circle10{
+            height: 40px;
+            width: 40px;
+            border: 5px solid rgb(116, 96, 96);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="circle"  id="circle1"></div>
+        <div class="circle"  id="circle2"></div>
+        <div class="circle"  id="circle3"></div>
+        <div class="circle"  id="circle4"></div>
+        <div class="circle"  id="circle5"></div>
+        <div class="circle"  id="circle6"></div>
+        <div class="circle"  id="circle7"></div>
+        <div class="circle"  id="circle8"></div>
+        <div class="circle"  id="circle9"></div>
+        <div class="circle"  id="circle10"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            border-radius: 8px;
+        }
+
+        body {
+            background-color: rgba(7, 4, 4, 0.89);
+        }
+
+        .container {
+            text-align: center;
+            padding: 4px;
+            margin-top: 50px;
+            margin-left: auto;
+            margin-right: auto;
+
+            width: 410px;
+            height: 523px;
+
+        }
+
+        .head {
+            width: auto;
+            font-size: 30px;
+            border-radius: 1px solid;
+            padding: 10px;
+            font-weight: bold;
+            background-color: #c9bc12c5;
+            color: white;
+        }
+
+        .qchart {
+            background-color: #efdede;
+            width: 400px;
+            height: 140px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            padding-top: 15px;
+            font-size: 28px;
+        }
+
+        .ans {
+            width: 400px;
+            height: 50px;
+            background-color: #f3f0eab8;
+            margin-bottom: 7px;
+            font-size: 25px;
+            padding-top: 5px;
+        }
+
+        #ans1:hover {
+            background-color: white;
+        }
+
+        #ans2:hover {
+            background-color: white;
+        }
+
+        #ans3:hover {
+            background-color: white;
+        }
+
+        #ans4:hover {
+            background-color: white;
+        }
+
+        .result {
+            margin-top: 10px;
+            width: 400px;
+            height: 70px;
+            font-size: 30px;
+        }
+
+        .true,
+        .false {
+            padding-top: 13px;
+            height: 70px;
+            width: 193px;
+            display: inline-block;
+            background-color: #c9bc12c5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="head">Online Test App</div>
+        <div class="qchart">WISH YOU AN EASY TEST</div>
+        <div class="ans" id="ans1">CLICK HERE TO START</div>
+        <div class="ans" id="ans2">CLICK HERE TO START</div>
+        <div class="ans" id="ans3">CLICK HERE TO START</div>
+        <div class="ans" id="ans4">CLICK HERE TO START</div>
+        <div class="result">
+            <div class="true">True: <span id="true">0</span></div>
+            <div class="false">False: <span id="false">0</span></div>
+        </div>
+    </div>
+
+    <script>
+        let qchart = document.querySelector('.qchart');
+        let ans1 = document.getElementById('ans1')
+        let ans2 = document.getElementById('ans2')
+        let ans3 = document.getElementById('ans3')
+        let ans4 = document.getElementById('ans4')
+        let _true = document.querySelector('#true')
+        let _false = document.querySelector('#false')
+
+        let qarray = ['1. What is the best country?',
+            '2. Where is the statue of liberty?',
+            '3. What is the name of Afg capital?',
+            '4. What is the result of 2 - 1 ?',
+            '5. Find the right answer 1 * 1?',
+            'Your Final Score: ']
+
+        let aarray = [['United State ', 'England  ', 'Germany  ', 'China  '],
+        ['Finland  ', 'Iran  ', 'United State ', 'China  '],
+        ['Kabul ', 'Kandahar  ', 'Badakhshan  ', 'Bamian  '],
+        ['Ten  ', 'Ninty  ', 'Four  ', 'One '],
+        ['Two  ', 'One ', 'Eight  ', 'Zero  '],
+        ['End of the test', 'End of the test', 'End of the test', 'End of the test']]
+
+
+        var index = 0;
+        var trueScore = 0;
+        var falseScore = 0;
+        function update() {
+
+            qchart.textContent = qarray[index]
+            ans1.textContent = aarray[index][0]
+            ans2.textContent = aarray[index][1]
+            ans3.textContent = aarray[index][2]
+            ans4.textContent = aarray[index][3]
+            index++
+            if (index > qarray.length) {
+                qchart = `Total Score: ${trueScore}`
+            }
+        }
+
+
+        ans1.addEventListener('click', handler)
+        ans2.addEventListener('click', handler)
+        ans3.addEventListener('click', handler)
+        ans4.addEventListener('click', handler)
+
+        function handler(event) {
+            if (event.target.innerHTML.endsWith(' ')) {
+                trueScore++;
+                if (event.target.innerHTML.endsWith('  ')) {
+                    falseScore++;
+                    trueScore--;
+                }
+            }
+            update()
+            _true.innerHTML = trueScore
+            _false.innerHTML = falseScore
+
+            if (index > 5) {
+                qchart.innerHTML += trueScore
+            }
+
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        body{
+            height: 100vh;
+            background: radial-gradient(rgb(5, 221, 245), rgb(6, 150, 253));
+        }
+
+        .container{
+            height: 60vh;
+            width: 30vw;
+            position: absolute;
+            top: 50vh;
+            left: 50vw;
+            transform: translate(-50%, -50%);
+            perspective: 1000px;
+        }
+
+        .box{
+            height: 250px;
+            width: 250px;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            /* transform: rotate(-90deg); */
+            transform-style: preserve-3d;
+            animation: animate 5s infinite;
+        }
+
+        @keyframes animate{
+            0%{
+                transform: rotateX(45deg) rotateY(-45deg);
+            }
+
+            25%{
+                transform: rotateX(-45deg) rotateY(-45deg);
+            }
+
+            50%{
+                transform: rotateX(45deg) rotateY(45deg) ;
+            }
+
+            75%{
+                transform: rotateX(-45deg) rotateY(45deg);
+            }
+
+            100%{
+                transform: rotateX(45deg) rotateY(-45deg);
+            }
+        }
+
+        .card{
+            height: 250px;
+            width: 250px;
+            text-align: center;
+            padding: 100px 0px;
+            color: white;
+            background: black;
+            border: 2px solid white;
+            font-size: 32px;
+            box-sizing: border-box;
+            position: absolute;
+            transition: all 1s;
+        }
+
+        #front{
+            transform: translateZ(125px);
+        }
+
+        #back{
+            transform: translateZ(-125px);
+        }
+
+        #left{
+            right: 125px;
+            transform: rotateY(-90deg);
+        }
+
+        #right{
+            left: 125px;
+            transform: rotateY(90deg);
+        }
+
+        #top{
+            bottom: 125px;
+            transform: rotateX(90deg);
+        }
+
+        #bottom{
+            top: 125px;
+            transform: rotateX(-90deg);
+        }
+
+        input{
+            height: 50px;
+            width: 100px;
+            background: pink;
+            font-size: 22px;
+            cursor: pointer;
+            position: absolute;
+            top: -100px;
+            left: 175px;
+        }
+
+        input:focus~ .box #front{
+            transform: translateZ(180px) rotateY(360deg);
+        }
+
+        input:focus~ .box #back{
+            transform: translateZ(-180px) rotateY(360deg);
+        }
+
+        input:focus~ .box #left{
+           right: 180px;
+        }
+
+        input:focus~ .box #right{
+           left: 180px;
+        }
+
+        input:focus~ .box #top{
+           bottom: 180px;
+        }
+
+        input:focus~ .box #bottom{
+           top: 180px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="button" value="HiteMe">
+        <div class="box">
+            <div class="card" id="front">Front</div>
+            <div class="card" id="back">Back</div>
+            <div class="card" id="left">Left</div>
+            <div class="card" id="right">Right</div>
+            <div class="card" id="top">Top</div>
+            <div class="card" id="bottom">Bottom</div>
+        </div>
+    </div>
+</body>
+</html>

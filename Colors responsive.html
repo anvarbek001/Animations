@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../bootstrap-5.2.2-dist/css/bootstrap.min.css">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <button type="button" onclick="changeColors()" class="btn btn-primary"><span>Click Me</span></button>
+    </div>
+
+    <script>
+        let index = 0;
+        let son = 0;
+        let k = 0;
+
+        function changeColors() {
+            let colors = ["blue", "red", "green", "gold", "yellow", "purple"]
+            let btnColors = ["purple", "yellow", "gold", "green", "red", "blue"]
+            let txtColor = ["orange", "black", "pink"]
+
+            document.getElementsByTagName('body')[0].
+                style.background = colors[index++];
+
+            if (index > colors.length - 1) index = 0;
+
+            document.getElementsByTagName('button')[0].
+                style.background = btnColors[son++];
+
+            if (son > btnColors.length - 1) son = 0;
+
+            document.getElementsByTagName('span')[0].
+                style.color = txtColor[k++];
+
+            if (k > txtColor.length - 1) k = 0;
+        }
+    </script>
+</body>
+
+</html>
